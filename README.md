@@ -1,8 +1,20 @@
 # ADA01-DISENO
-U1_T1 - Aplicación captura de calificaciones
+Compilación
+1) Crear carpetas de salida (si no existen):
+   - Windows (PowerShell):
+     mkdir build, dist
+   - Linux/Mac:
+     mkdir -p build dist
 
-1) Tendrá como entrada un archivo, en formato CSV, con el listado de los estudiantes, las columnas del archivo CSV serán: matrícula, primer apellido, segundo apellido y nombres.
+2) Compilar:
+   javac -d build src/*.java
 
-2) Ya con el archivo el programa permitirá capturar las calificaciones finales de la asignatura "Diseño de Software", dicha calificación deberá estar en escala 1 al 100 sin decimales.
+Empaquetado (crear JAR ejecutable)
+jar --create --file dist/programa.jar --main-class App -C build .
 
-3) Capturadas todas las calificaciones el usuario tendrá una opción para generar un archivo CSV con: matrícula, nombre asignatura (en este caso Diseño de Software), y la calificación.
+Ejecución
+- Pasando la ruta del CSV como argumento:
+  java -jar dist/programa.jar alumnos.csv
+
+- Si no pasas ruta, el programa te la pedirá por consola.
+
