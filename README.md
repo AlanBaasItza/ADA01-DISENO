@@ -1,18 +1,19 @@
 # ADA01-DISENO
-Compilación
+## Compilación
 1) Crear carpetas de salida (si no existen):
-   - Windows (PowerShell):
+   - Windows (PowerShell):<br>
      mkdir build, dist
-   - Linux/Mac:
+   - Linux/Mac:<br>
      mkdir -p build dist
 
 2) Compilar:
    javac -d build src/*.java
 
-Empaquetado (crear JAR ejecutable)
+## Empaquetado (crear JAR ejecutable)
+Utilizar el comando:
 jar --create --file dist/programa.jar --main-class App -C build .
 
-Ejecución
+## Ejecución
 - Pasando la ruta del CSV como argumento:
   java -jar dist/programa.jar alumnos.csv
 
